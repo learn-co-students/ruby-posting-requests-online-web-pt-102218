@@ -1,4 +1,6 @@
 <h1>Search for Coffee Shops Near Me</h1>
+<%= session[:token] %>
+
 <%= form_tag '/search' do %>
   <%= label_tag :zipcode %>
   <%= text_field_tag :zipcode %>
@@ -15,6 +17,7 @@
         <%= venue["location"]["address"] %><br>
         Checkins: <%= venue["stats"]["checkinsCount"] %><br>
       </li>
+      
     <% end %>
     </ul>
   <% end %>
